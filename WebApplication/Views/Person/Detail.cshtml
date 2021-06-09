@@ -1,0 +1,25 @@
+@model PersonViewModel
+
+@{
+    ViewData["Title"] = "Person Detail";
+    var person = @Model;
+}
+
+
+<div class="text-center">
+    <h2 class="display-4">The person that hates C#</h2>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="@person.Name">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="location" class="col-sm-2 col-form-label">Location</label>
+        <div class="col-sm-10">
+            <input type="text" readonly="" class="form-control-plaintext" id="location" value="@person.Location">
+        </div>
+    </div>
+
+</div>

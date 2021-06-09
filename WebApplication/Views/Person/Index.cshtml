@@ -1,0 +1,38 @@
+@model List<PersonViewModel>
+
+@{
+    ViewData["Title"] = "Person";
+}
+
+<div class="text-center">
+    <h2 class="display-4">List of people that hates C#</h2>
+
+    <table class="table table-bordered">
+        <thead class="table-primary">
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Location</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            foreach (var person in ViewData.Model)
+            {
+                <tr >
+                    <td>@person.Id</td>
+                    <td>@person.Name</td>
+                    <td>@person.Location</td>
+                    <td>
+                        <a href="@Url.Action("Detail", "Person", new {id = @person.Id})">View</a>
+                    </td>
+                </tr>
+            }
+        }
+
+
+        </tbody>
+    </table>
+
+</div>
